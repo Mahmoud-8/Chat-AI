@@ -30,8 +30,8 @@ export default function Sidebar() {
 
             <div className="bottom">
 
-                <div className="bottom-item recent-entry">
-                    <img src={assets.user_icon} alt="" />
+                <div className="bottom-item recent-entry ">
+                    <img className="avater" src={assets.user_icon} alt="" />
                     {extended ? <p>Profile</p> : null}
                 </div>
                 <div className="bottom-item recent-entry">
