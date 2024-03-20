@@ -10,6 +10,7 @@ export default function Sidebar() {
                     <img src={assets.plus_icon} alt="" />
                     <p>New Chat</p>
                 </div>
+                
                 <div className='recent'>
                     <p className="recent-title">Recent</p>
                     <div className="recent-entry">
