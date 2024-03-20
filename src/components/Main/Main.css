@@ -18,3 +18,35 @@
     width: 40px;
     border-radius: 50%;
 }
+
+.main-container{
+    max-width: 900px;
+    margin: 0 auto;
+}
+.main .greet{
+    margin: 50px 0px;
+    font-size: 56px;
+    color: rgb(101, 153, 199);
+    font-weight: 600;
+    padding: 20px;
+}
+
+.main .greet span{
+    color: rgb(17, 189, 132);
+}
+
+.main .cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px,1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.main .card{
+    height: 200px;
+    padding: 15px;
+    background-color: rgb(242, 242, 242);
+    border-radius: 10px;
+    position: relative;
+    cursor: pointer;
+}
