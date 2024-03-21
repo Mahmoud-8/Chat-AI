@@ -13,10 +13,10 @@ export default function Main() {
                     <p><span>Hello, Sebastian!</span></p>
                     <p>How I can Help you today?</p>
                 </div>
-                <p>Tools Ready to use</p>
+                <p className='tagname'>Tools Ready to use</p>
 
                 <div className="cards">
-                <div className='card'>
+                   <div className='card'>
                         <p>Roadmap</p>
                         <img src={assets.compass_icon} alt=""/>
                     </div>  
@@ -33,9 +33,18 @@ export default function Main() {
                         <img src={assets.compass_icon} alt=""/>
                     </div>
                 </div>
+                <div className="main-bottom">
+                  <div className="search-box">
+                    <input type="text" placeholder="Search tools..." />
+                    <div>
+                      <img src={assets.gallery_icon} alt=""/>
+                      <img src={assets.mic_icon} alt="" />
+                      <img src={assets.send_icon} alt="" />
+                    </div>
+                  </div>
+                  <p className="bottom-info"> Hepha AI Powered by Mesh Firm</p>
+                </div>
             </div>
-
-
     </div>
   )
 }

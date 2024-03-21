@@ -60,3 +60,65 @@
     bottom: 10px;
     right: 10px;
 }
+
+.main .card p{
+    color: rgb(88, 88, 88);
+    font-size: 17px;
+}
+
+
+.main .tagname{
+    font-size: 20px;
+    color: rgb(171, 189, 205);
+    font-weight: 500;
+    padding: 10px;
+}
+
+.main .card:hover{
+    background-color: rgb(211, 215, 214);
+}
+
+.main-bottom{
+    position:absolute;
+    bottom: 0;
+    width: 100%;
+    max-width: 900px;
+    padding: 0px 20px;
+    margin: auto;
+}
+.search-box{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    gap: 20px;
+    background-color: rgb(237, 237, 237);
+    border-radius: 50px;
+}
+
+.search-box img{
+    width: 24px;
+    cursor: pointer;
+}
+
+.search-box input{
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    padding: 8px;
+}
+
+.search-box div{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.main .bottom-info{
+    font-size: 13px;
+    margin: 15px auto;
+    text-align: center;
+    font-weight: 300;
+}
