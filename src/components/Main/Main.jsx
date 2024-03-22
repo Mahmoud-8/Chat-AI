@@ -17,7 +17,10 @@ export default function Main() {
             <img src={assets.user_icon} alt="" />
             </div>
             <div className="main-container">
-                <div className="greet">
+
+              {showResult 
+              ?<>
+  <div className="greet">
                     <p><span>Hello, Sebastian!</span></p>
                     <p>How I can Help you today?</p>
                 </div>
@@ -40,7 +43,16 @@ export default function Main() {
                         <p>Goals/ Objection</p>
                         <img src={assets.compass_icon} alt=""/>
                     </div>
-                </div>
+                </div>         
+                </>
+
+                :<div className='result'></div>
+              }
+
+              
+
+
+
                 <div className="main-bottom">
                   <div className="search-box">
                     <input onChange={(e)=>setInput(e.target.value)} value={input} type="text" placeholder="Search tools..." />
