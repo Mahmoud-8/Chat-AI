@@ -1,7 +1,15 @@
 import { assets } from '../../assets/assets';
 import './Main.css';
+import { useContext } from 'react';
+import { Context } from '../../context/Context';
 
 export default function Main() {
+
+  const {onSent,recentPrompt,showResult,loading,resultData,setInput,input} = useContext(Context);
+
+
+
+
   return (
     <div className='main'>
         <div className="nav">
@@ -35,11 +43,11 @@ export default function Main() {
                 </div>
                 <div className="main-bottom">
                   <div className="search-box">
-                    <input type="text" placeholder="Search tools..." />
+                    <input onChange={(e)=>setInput(e.target.value)} value={input} type="text" placeholder="Search tools..." />
                     <div>
                       <img src={assets.gallery_icon} alt=""/>
                       <img src={assets.mic_icon} alt="" />
-                      <img src={assets.send_icon} alt="" />
+                      <img onClick={()=>onSent()} src={assets.send_icon} alt="" />
                     </div>
                   </div>
                   <p className="bottom-info"> Hepha AI Powered by Mesh Firm</p>
