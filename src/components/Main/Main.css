@@ -126,7 +126,7 @@
 .result{
     padding: 0px 5px;
     max-height: 70vh;
-    overflow: scroll;
+    overflow-y: auto; 
 }
 
 .result::-webkit-scrollbar{
@@ -138,6 +138,7 @@
     display: flex;
     align-items: center;
     gap: 20px;
+
 } 
 
 .result img{
