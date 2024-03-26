@@ -3,10 +3,17 @@ import './Main.css';
 import { useContext } from 'react';
 import { Context } from '../../context/Context';
 
+
 export default function Main() {
 
   const { onSent, recentPrompt, showResult, loading, resultData, setInput, input } = useContext(Context);
 
+  // Function to handle Enter key press
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      onSent(); // Trigger onSent function when Enter key is pressed
+    }
+  };
 
 
 
@@ -72,7 +79,14 @@ export default function Main() {
 
         <div className="main-bottom">
           <div className="search-box">
-            <input onChange={(e) => setInput(e.target.value)} value={input} type="text" placeholder="Search tools..." />
+          <input 
+              onChange={(e) => setInput(e.target.value)} 
+              onKeyPress={handleKeyPress} // Add event listener for key press
+              value={input} 
+              type="text" 
+              placeholder="Search tools..." 
+            />
+
             <div>
               <img src={assets.gallery_icon} alt="" />
               <img src={assets.mic_icon} alt="" />
