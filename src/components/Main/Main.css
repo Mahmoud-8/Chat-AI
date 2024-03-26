@@ -150,34 +150,34 @@
     align-items: start;
     gap: 20px;
 }
-.loader{
+
+.loader {
     width: 100%;
     display: flex;
-    flex-direction: column;
+    justify-content: left;
     gap: 10px;
-}
-
-
-.loader hr{
-    border-radius: 4px;
-    border: none;
-    background-color: #f6f7f8;
-    background: linear-gradient(to right, #9ed7ff, #ffff, #9ed7ff);
-    background-size: 800px 50px;
-    height: 20px;
-    animation: loader 3s infinite linear;
-    
-}
-
-
-@keyframes loader{
-    0%{
-        background-position: -800px 0px;
+  }
+  
+  .loader div {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgb(199, 197, 197);
+    animation: loader 1.5s infinite linear;
+  }
+  
+  @keyframes loader {
+    0% {
+      transform: scale(1);
     }
-    100%{
-        background-position: 800px 0px;
+    50% {
+      transform: scale(1.5);
     }
-}
+    100% {
+      transform: scale(1);
+    }
+  }
+  
 
 
 .result-data p{

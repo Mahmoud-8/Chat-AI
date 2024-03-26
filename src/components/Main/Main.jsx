@@ -46,6 +46,7 @@ export default function Main() {
             </div>
           </>
           : <div className='result'>
+
             <div className='result-title'>
               <img src={assets.user_icon} alt="" />
               <p>{recentPrompt}</p>
@@ -54,13 +55,13 @@ export default function Main() {
               <img src={assets.knowledge_icon} alt="" />
               {loading
               ?<div className='loader'>
-                <hr />
-                <hr />
-                <hr />
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
                 
-                 </div>
+               
               :<p dangerouslySetInnerHTML={{ __html:resultData}}></p>
-
             }
             </div>
           </div>
