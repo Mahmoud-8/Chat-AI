@@ -3,11 +3,10 @@ import { assets } from '../../assets/assets';
 import { useState, useContext } from 'react';
 import { Context } from '../../context/Context';
 
-
 export default function Sidebar() {
 
     const [extended, setExtended] = useState(false);
-    const { onSent, prevPromts, setRecentPrompt, newChat } = useContext(Context);
+    const { onSent, prevPrompts, setRecentPrompt, newChat } = useContext(Context); // Here was the typo
 
     const loadPrompt = async (prompt) => {
         setRecentPrompt(prompt)
@@ -23,13 +22,13 @@ export default function Sidebar() {
                     {extended ? <p>New Chat</p> : null}
                 </div>
 
-                {extended && prevPromts ? (
+                {extended && prevPrompts ? (
                     <div className='recent'>
                         <p className="recent-title">Recent</p>
-                        {prevPromts.map((item, index) => {
+                        {prevPrompts.map((item, index) => {
                             return (
                                 <div key={index} onClick={() => loadPrompt(item)} className="recent-entry">
-                                    <img src={assets.knowledge_icon} alt="" />
+                                    <img src={assets.message_icon} alt="" />
                                     <p>{item.slice(0, 18)} ...</p>
                                 </div>
                             );
