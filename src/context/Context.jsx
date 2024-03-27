@@ -13,7 +13,7 @@ const ContextProvider = (props) => {
     const [loading, setLoading] = useState(false);
     const [resultData, setResultData] = useState("");
 
-    const resultRef = useRef(null); // Create a ref for the result container
+    const resultRef = useRef<HTMLDivElement>(null); // Create a ref for the result container
 
     const delayPara = (index, nextWord) => {
         setTimeout(function () {
