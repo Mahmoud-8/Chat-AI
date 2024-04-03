@@ -1,12 +1,18 @@
 import { assets } from '../../assets/assets';
 import './Main.css';
-import { useContext } from 'react';
+import { useContext, useEffect, useRef } from 'react';
 import { Context } from '../../context/Context';
 
-
 export default function Main() {
-
   const { onSent, recentPrompt, showResult, loading, resultData, setInput, input } = useContext(Context);
+
+  const resultRef = useRef(null); // Create a ref for the result container
+
+  useEffect(() => {
+    if (resultRef.current) {
+      resultRef.current.scrollTop = resultRef.current.scrollHeight; // Scroll to the bottom
+    }
+  }, [resultData]); // Scroll whenever resultData changes
 
   // Function to handle Enter key press
   const handleKeyPress = (e) => {
@@ -15,8 +21,6 @@ export default function Main() {
     }
   };
 
-
-
   return (
     <div className='main'>
       <div className="nav">
@@ -24,12 +28,11 @@ export default function Main() {
         <img src={assets.user_icon} alt="" />
       </div>
       <div className="main-container">
-
-        {!showResult
-          ? <>
+        {!showResult ? (
+          <>
             <div className="greet">
               <p><span>Hello, Sebastian!</span></p>
-              <p>How I can Help you today?</p>
+              <p>How can I help you today?</p>
             </div>
             <p className='tagname'>Tools Ready to use</p>
 
@@ -52,50 +55,45 @@ export default function Main() {
               </div>
             </div>
           </>
-          : <div className='result'>
-
+        ) : (
+          <div className='result' ref={resultRef}>
             <div className='result-title'>
               <img src={assets.user_icon} alt="" />
               <p>{recentPrompt}</p>
             </div>
             <div className='result-data'>
               <img src={assets.knowledge_icon} alt="" />
-              {loading
-              ?<div className='loader'>
-              <div></div>
-              <div></div>
-              <div></div>
-            </div>
-                
-               
-              :<p dangerouslySetInnerHTML={{ __html:resultData}}></p>
-            }
+              {loading ? (
+                <div className='loader'>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </div>
+              ) : (
+                <p dangerouslySetInnerHTML={{ __html: resultData }}></p>
+              )}
             </div>
           </div>
-
-        }
-
-
+        )}
 
         <div className="main-bottom">
           <div className="search-box">
-          <input 
-              onChange={(e) => setInput(e.target.value)} 
+            <input
+              onChange={(e) => setInput(e.target.value)}
               onKeyPress={handleKeyPress} // Add event listener for key press
-              value={input} 
-              type="text" 
-              placeholder="Search tools..." 
+              value={input}
+              type="text"
+              placeholder="Search tools..."
             />
-
             <div>
               <img src={assets.gallery_icon} alt="" />
               <img src={assets.mic_icon} alt="" />
               <img onClick={() => onSent()} src={assets.send_icon} alt="" />
             </div>
           </div>
-          <p className="bottom-info"> Hepha AI Powered by Mesh Firm</p>
+          <p className="bottom-info">Hepha AI Powered by Mesh Firm</p>
         </div>
       </div>
     </div>
-  )
+  );
 }

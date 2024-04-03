@@ -23,7 +23,7 @@ const ContextProvider = (props) => {
 
     useEffect(() => {
         if (resultRef.current) {
-            resultRef.current.scrollIntoView(); // Scroll to the bottom
+            resultRef.current.scrollIntoView({ behavior: "smooth" }); // Scroll to the bottom
         }
     }, [resultData, resultRef]); // Scroll whenever resultData changes
 
