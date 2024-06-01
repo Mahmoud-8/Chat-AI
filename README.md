@@ -5,6 +5,8 @@
 
 This project is a web application with a conversational interface powered by AI, allowing users to input prompts, receive AI-generated responses, and manage their conversation history.
 
+![alt text](<Screenshot 2024-06-01 at 4.41.07 PM.png>)
+
 ## Installation
 
 1. Clone the repository:
