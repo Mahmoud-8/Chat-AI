@@ -1,9 +1,12 @@
+//Main
+
 import { assets } from '../../assets/assets';
 import './Main.css';
 import { useContext, useEffect, useRef } from 'react';
 import { Context } from '../../context/Context';
 
 export default function Main() {
+  const { conversationHistory } = useContext(Context);
   const { onSent, recentPrompt, showResult, loading, resultData, setInput, input } = useContext(Context);
 
   const resultRef = useRef(null); // Create a ref for the result container
@@ -24,14 +27,21 @@ export default function Main() {
   return (
     <div className='main'>
       <div className="nav">
-        <p>Hepha logo</p>
+        <p> logo</p>
         <img src={assets.user_icon} alt="" />
       </div>
+     
+      {conversationHistory && Array.isArray(conversationHistory) && conversationHistory.map((item, index) => (
+                <div key={index} className='conversation-item'>
+                    <p>{item.prompt}</p>
+                    <p>{item.response}</p>
+                </div>
+            ))}
       <div className="main-container">
         {!showResult ? (
           <>
             <div className="greet">
-              <p><span>Hello, Sebastian!</span></p>
+              <p><span>Hello!</span></p>
               <p>How can I help you today?</p>
             </div>
             <p className='tagname'>Tools Ready to use</p>
@@ -91,7 +101,7 @@ export default function Main() {
               <img onClick={() => onSent()} src={assets.send_icon} alt="" />
             </div>
           </div>
-          <p className="bottom-info">Hepha AI Powered by Mesh Firm</p>
+          <p className="bottom-info"> AI Powered by Mahmoud</p>
         </div>
       </div>
     </div>

@@ -1,3 +1,5 @@
+//Sid
+
 import './Sidebar.css';
 import { assets } from '../../assets/assets';
 import { useState, useContext } from 'react';
@@ -21,6 +23,8 @@ export default function Sidebar() {
                     <img src={assets.plus_icon} alt="" />
                     {extended ? <p>New Chat</p> : null}
                 </div>
+
+                
 
                 {extended && prevPrompts ? (
                     <div className='recent'>
